@@ -35,7 +35,11 @@ while True:
     last_height = new_height
 
 soup = BeautifulSoup(driver.page_source, 'html.parser')
-goods_list = soup.select('li.basicList_item__0T9JD')
+#<div class="basicList_item__0T9JD">
+#<div class="basicList_title__VfX3c">
+# <a target="_blank" class="basicList_link__JLQJf" 
+#<span class="price_num__S2p_v" data-testid="SEARCH_PRODUCT_PRICE">300,000원</span>
+goods_list = soup.select('div.basicList_item__0T9JD')
 
 try: 
     for v in goods_list:
